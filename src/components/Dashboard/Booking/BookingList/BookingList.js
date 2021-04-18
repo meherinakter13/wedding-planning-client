@@ -8,7 +8,7 @@ const BookingList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://localhost:5000/bookingList?email=' + loggedInUser.email)
+        fetch('https://gentle-fjord-82903.herokuapp.com/bookingList?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [loggedInUser.email])
@@ -40,7 +40,7 @@ const BookingList = () => {
                                         <td style={{ width: "20%" }}> {
                                             order.image ? <img style={{ height: '100px', width: '100px', marginTop: '10px' }} src={`data:image/png;base64,${order.image.img}`} alt="" />
                                                 :
-                                                <img style={{ height: '120px', width: '120px' }} className="img-fluid mb-3" src={`http://localhost:5000/${order.img}`} alt="" />
+                                                <img style={{ height: '120px', width: '120px' }} className="img-fluid mb-3" src={`https://gentle-fjord-82903.herokuapp.com/${order.img}`} alt="" />
                                         }</td>
                                         <td style={{ width: "20%",color: 'red'}}>{order.status}</td>
                                     </tr>

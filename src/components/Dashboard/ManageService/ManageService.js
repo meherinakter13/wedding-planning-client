@@ -5,19 +5,19 @@ import Sidebar from '../Sidebar/Sidebar';
 const ManageService = () => {
     const [services ,setServices] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/services')
+        fetch('https://gentle-fjord-82903.herokuapp.com/services')
         .then(res =>res.json())
         .then(data => setServices(data))
     },[])
 
     const deleteProduct  = () =>{
-        fetch(`http://localhost:5000/services`)
+        fetch(`https://gentle-fjord-82903.herokuapp.com/services`)
         .then(res =>res.json())
         .then(data => setServices(data))
        }
         
         const handleDelete = (id) => {
-          fetch(`http://localhost:5000/deleteService/${id}`, {
+          fetch(`https://gentle-fjord-82903.herokuapp.com/deleteService/${id}`, {
               method : "DELETE"
           })
           .then(res => res.json())
@@ -59,7 +59,7 @@ const ManageService = () => {
                         <td className="w-25"> {
                             service.image ? <img style={{ height: '100px', width: '100px', marginTop: '10px' }} src={`data:image/png;base64,${service.image.img}`} alt="" />
                                 :
-                                <img style={{ height: '120px', width: '120px' }} className="img-fluid mb-3" src={`http://localhost:5000/${service.img}`} alt="" />
+                                <img style={{ height: '120px', width: '120px' }} className="img-fluid mb-3" src={`https://gentle-fjord-82903.herokuapp.com/${service.img}`} alt="" />
                             }</td>
                         <td className="w-25"><button className ="btn btn-danger mt-3" onClick = {()=>handleDelete(service._id)}>Delete</button></td>
                         </tr>

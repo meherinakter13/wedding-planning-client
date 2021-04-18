@@ -13,7 +13,7 @@ const AddReview = () => {
             name: loggedInUser.name,
             comment: data.comment
         }
-        fetch('http://localhost:5000/addReviews', {
+        fetch('https://gentle-fjord-82903.herokuapp.com/addReviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

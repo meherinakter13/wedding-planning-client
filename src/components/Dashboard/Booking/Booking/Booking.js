@@ -10,7 +10,7 @@ const Booking = () => {
     const [booking, setBooking] = useState({})
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/booking/${id}`)
+        fetch(`https://gentle-fjord-82903.herokuapp.com/booking/${id}`)
             .then(res => res.json())
             .then(data => setBooking(data))
     }, [id])
@@ -26,7 +26,7 @@ const Booking = () => {
             paymentId
         }
 
-        fetch('http://localhost:5000/addAllBookings', {
+        fetch('https://gentle-fjord-82903.herokuapp.com/addAllBookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
